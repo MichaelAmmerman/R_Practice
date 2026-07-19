@@ -34,3 +34,43 @@ flights |>
 
 flights |>
   distinct()
+
+flights |>
+  mutate(
+    gain = dep_delay - arr_delay,
+    speed = distance / air_time * 60,
+    .after = day
+  )
+
+
+flights |> 
+  select(year, month, day)
+
+flights |>
+  select(year:day)
+
+flights |>
+  select(!year:day)
+
+
+flights |> 
+  select(tail_num = tailnum)
+
+flights |> 
+  rename(tail_num = tailnum)
+
+flights |>
+  relocate(time_hour, air_time)
+
+
+
+var <- c("year", "month", "day", "dep_delay", "arr_delay")
+
+flights |>
+  select(any_of(var))
+
+flights |> 
+  select(contains("TIME"))
+flights |>
+  select(tailnum, arr_delay) |>
+  arrange(arr_delay)
