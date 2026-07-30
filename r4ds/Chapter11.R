@@ -53,3 +53,5 @@ ggplot(mpg, aes(x = displ, y = hwy)) +
     data = potential_outliers,
     color = "red", size = 3, shape = "circle open"
   )
+
+
